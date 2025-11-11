@@ -1,0 +1,513 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Next.js 中文教程 - 下一代 React 框架">
+  <div class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="title-line">Next.js</span>
+        <span class="title-gradient">中文教程</span>
+      </h1>
+      <p class="hero-description">
+        下一代 React 全栈框架<br />
+        构建快速、现代化的 Web 应用
+      </p>
+      <div class="hero-buttons">
+        <a href="/tutorials/getting-started" class="btn btn-primary">
+          快速开始
+          <span class="btn-icon">→</span>
+        </a>
+        <a href="/tutorials" class="btn btn-secondary">
+          浏览教程
+        </a>
+      </div>
+      <div class="hero-features">
+        <div class="feature-tag">⚡ 服务端渲染</div>
+        <div class="feature-tag">🔥 静态生成</div>
+        <div class="feature-tag">🚀 API 路由</div>
+        <div class="feature-tag">💎 TypeScript</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="why-section">
+    <h2 class="section-title">为什么选择 Next.js？</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>极速开发</h3>
+        <p>快速刷新、零配置、开箱即用的开发体验让你专注于构建应用</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>混合渲染</h3>
+        <p>SSR、SSG、ISR 多种渲染模式，为每个页面选择最佳方案</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔌</div>
+        <h3>全栈框架</h3>
+        <p>内置 API 路由，轻松构建前后端一体化的应用</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📦</div>
+        <h3>优化构建</h3>
+        <p>自动代码分割、图片优化、字体优化，极致性能体验</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎨</div>
+        <h3>CSS 支持</h3>
+        <p>支持 CSS Modules、Sass、Tailwind 等多种样式方案</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🗂️</div>
+        <h3>高级路由和联套布局</h3>
+        <p>使用文件系统创建路由，包括支持更高级的路由模式和 UI 布局</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚙️</div>
+        <h3>服务器操作</h3>
+        <p>通过调用函数执行服务器代码，无需使用 API，即可轻松重新验证缓存数据并更新 UI</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🛡️</div>
+        <h3>中间件</h3>
+        <p>掌控传入的请求。使用代码来定义路由和访问规则，用于身份验证、实验和国际化</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="start-section">
+    <div class="start-content">
+      <h2>准备好开始了吗？</h2>
+      <p>跟随我们的教程，从零开始学习 Next.js</p>
+      <div class="start-buttons">
+        <a href="/tutorials/getting-started" class="btn btn-large">
+          开始学习 Next.js
+          <span class="btn-icon">→</span>
+        </a>
+        <a href="https://message163.github.io/react-docs/" target="_blank" class="btn btn-outline">
+          学习 React 基础
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Hero Section */
+  .hero {
+    position: relative;
+    text-align: center;
+    padding: 8rem 2rem 6rem;
+    margin: -4rem -2rem 4rem;
+    overflow: hidden;
+  }
+
+  .hero-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    filter: blur(60px);
+    animation: pulse 4s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.5;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.1);
+      opacity: 0.8;
+    }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.03em;
+  }
+
+  .title-line {
+    display: block;
+    color: var(--text-primary);
+  }
+
+  .title-gradient {
+    display: block;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  .hero-description {
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+
+  .btn-primary {
+    background: var(--primary);
+    color: #000000;
+    box-shadow: 0 4px 14px rgba(255, 255, 255, 0.3);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5);
+  }
+
+  .btn-secondary {
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+    backdrop-filter: blur(10px);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+  }
+
+  .btn-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+  }
+
+  .btn:hover .btn-icon {
+    transform: translateX(4px);
+  }
+
+  .hero-features {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .feature-tag {
+    padding: 0.5rem 1rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+
+  .feature-tag:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+  }
+
+  /* Why Section */
+  .why-section {
+    margin-bottom: 6rem;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .feature-card {
+    padding: 2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+
+  .feature-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .feature-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+  }
+
+  .feature-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  /* Code Section */
+  .code-section {
+    margin-bottom: 6rem;
+  }
+
+  .code-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .code-block {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .code-block:hover {
+    border-color: var(--primary);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
+    transform: translateY(-4px);
+  }
+
+  .code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .code-title {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    font-family: 'Courier New', monospace;
+  }
+
+  .code-badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--text-primary);
+    border-radius: 4px;
+    font-weight: 600;
+  }
+
+  .code-block pre {
+    padding: 1.5rem 1.25rem;
+    margin: 0;
+    overflow-x: auto;
+  }
+
+  .code-block code {
+    font-family: 'Courier New', Consolas, Monaco, monospace;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  /* Start Section */
+  .start-section {
+    margin-bottom: 4rem;
+    padding: 4rem 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: calc(var(--radius) * 2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .start-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .start-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .start-content h2 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .start-content p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+  }
+
+  .start-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    color:red;
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+  }
+
+  .btn-outline:hover {
+    background: var(--bg-card);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 6rem 1.5rem 4rem;
+      margin: -3rem -1.5rem 3rem;
+    }
+
+    .hero-title {
+      margin-bottom: 1rem;
+    }
+
+    .hero-description {
+      margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+      flex-direction: column;
+      max-width: 300px;
+      margin: 0 auto 2rem;
+    }
+
+    .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .code-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .start-section {
+      padding: 3rem 1.5rem;
+    }
+
+    .start-buttons {
+      flex-direction: column;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero-features {
+      font-size: 0.8rem;
+    }
+
+    .feature-tag {
+      padding: 0.4rem 0.75rem;
+      font-size: 0.8rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>

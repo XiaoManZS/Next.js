@@ -1,0 +1,147 @@
+---
+import TutorialLayout from '../../layouts/TutorialLayout.astro';
+import { tutorialSections } from '../../config/tutorials';
+---
+
+<TutorialLayout title="Next.js 教程目录" description="完整的 Next.js 学习路径和教程列表">
+  <div class="content-header">
+    <h1>Next.js 学习指南</h1>
+    <p>从基础到高级，系统学习 Next.js 全栈开发的完整路径</p>
+  </div>
+
+  <div class="content-grid">
+    {tutorialSections.map((section) => (
+      <section class="content-section">
+        <h2>{section.icon} {section.title}</h2>
+        <div class="card-grid">
+          {section.items.map((item) => (
+            <a href={item.path} class="content-card">
+              <div class="card-icon">{item.icon}</div>
+              <div class="card-info">
+                <h3>{item.title}</h3>
+                <span class="card-badge">{item.level} • {item.duration}</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+</TutorialLayout>
+
+<style>
+  .content-header {
+    margin-bottom: 3rem;
+  }
+
+  .content-header h1 {
+    font-size: clamp(2.5rem, 5vw, 3rem);
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .content-header p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .content-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    font-weight: 700;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .content-card {
+    display: flex;
+    align-items: flex-start;
+    padding: 1.75rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+  }
+
+  .content-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+
+  .card-icon {
+    font-size: 2.5rem;
+    margin-right: 1.25rem;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .card-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .card-info h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .card-info p {
+    font-size: 0.925rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .card-badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 1024px) {
+    .card-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .content-header h1 {
+      font-size: 2rem;
+    }
+
+    .content-header p {
+      font-size: 1rem;
+    }
+
+    .content-card {
+      padding: 1.5rem;
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      margin-right: 1rem;
+    }
+  }
+</style>
+
