@@ -52,18 +52,18 @@ export const tutorialSections: TutorialSection[] = [
                 icon: '🧭'
             },
             {
-                title: '嵌套路由',
-                path: '/tutorials/nested-routes',
-                duration: '20 分钟',
-                level: '初级',
-                icon: '🗂️'
-            },
-            {
                 title: '动态路由',
                 path: '/tutorials/dynamic-routes',
                 duration: '25 分钟',
                 level: '中级',
                 icon: '⚡'
+            },
+            {
+                title: '平行路由',
+                path: '/tutorials/nested-routes',
+                duration: '20 分钟',
+                level: '初级',
+                icon: '🗂️'
             },
             {
                 title: '路由组',
