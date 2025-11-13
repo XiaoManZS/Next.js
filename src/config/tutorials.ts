@@ -155,40 +155,6 @@ export const tutorialSections: TutorialSection[] = [
         ]
     },
     {
-        title: '处理加载',
-        icon: '⏳',
-        items: [
-            {
-                title: 'loading 文件',
-                path: '/tutorials/loading-ui',
-                duration: '20 分钟',
-                level: '初级',
-                icon: '⏳'
-            },
-            {
-                title: 'Suspense 组件',
-                path: '/tutorials/suspense',
-                duration: '25 分钟',
-                level: '中级',
-                icon: '⏸️'
-            }
-        ]
-    },
-    {
-        title: '处理错误',
-        icon: '❌',
-        items: [
-            {
-                title: 'error 文件',
-                path: '/tutorials/error-handling',
-                duration: '20 分钟',
-                level: '初级',
-                icon: '🚨'
-            }
-        ]
-    },
-
-    {
         title: '设置元数据',
         icon: '🏷️',
         items: [
