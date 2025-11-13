@@ -10,7 +10,7 @@ description: 深入了解 Next.js 项目的文件和目录结构
 
 快速入门
 
-注： 当前教程为16.0.1版本，最低Node.js版本为20.9.0
+注： 当前教程为16.0.2版本，最低Node.js版本为20.9.0
 
 ```bash
 npx create-next-app@latest
