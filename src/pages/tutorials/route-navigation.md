@@ -108,16 +108,21 @@ export default async function Page() {
 }
 ```
 
-### permanentRedirect / redirect 注意事项
+### permanentRedirect / redirect 参数说明
 
-参数说明：
+这两个函数都接受以下参数：
 
-- `path` 字符串类型，表示重定向的 URL，可以是相对路径，也可以是绝对路径
-- `type` 值为 `replace` （默认）或者 `push`（Server Actions 中默认），表示重定向的类型
+- `path`：字符串类型，表示重定向的目标 URL（支持相对路径和绝对路径）
+- `type`：可选参数，值为 `replace` 或 `push`，用于控制重定向的行为
 
-`permanentRedirect` 和 `redirect` 在 Sever Actions 中会用 `push`添加到浏览器历史，在其他地方用 `replace`在浏览器历史栈中替换当前的 URL。你可以通过指定 `type`参数覆盖此行为。
+**关于 `type` 参数的默认行为：**
 
-tips：`type`属性在服务端组件无效。
+- 在 **Server Actions** 中：默认使用 `push`，会将新页面添加到浏览器历史记录
+- 在 **其他场景** 中：默认使用 `replace`，会替换当前的浏览器历史记录
+
+你可以通过显式指定 `type` 参数来覆盖默认行为。
+
+> ⚠️ **注意**：`type` 参数在服务端组件中无效，仅在客户端组件和 Server Actions 中生效。
 
 **预计学习时间**: 5 分钟  
 **难度级别**: 初级 🟢
