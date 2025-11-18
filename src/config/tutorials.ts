@@ -71,6 +71,13 @@ export const tutorialSections: TutorialSection[] = [
                 duration: '15 分钟',
                 level: '中级',
                 icon: '📦'
+            },
+            {
+                title: '路由处理',
+                path: '/tutorials/route-handling',
+                duration: '15 分钟',
+                level: '中级',
+                icon: '🔀'
             }
         ]
     },
