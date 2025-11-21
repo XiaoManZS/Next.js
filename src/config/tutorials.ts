@@ -82,22 +82,27 @@ export const tutorialSections: TutorialSection[] = [
         ]
     },
     {
+        title:'AI集成',
+        items: [
+            {
+                title: 'AI集成',
+                path: '/tutorials/ai',
+                duration: '30 分钟',
+                level: '中级',
+                icon: '🤖'
+            }
+        ]
+    },
+    {
         title: '样式',
         icon: '🎨',
         items: [
             {
-                title: 'Tailwind CSS',
+                title: 'CSS方案',
                 path: '/tutorials/tailwindcss',
                 duration: '30 分钟',
                 level: '初级',
                 icon: '🎨'
-            },
-            {
-                title: 'CSS-in-JS',
-                path: '/tutorials/css-in-js',
-                duration: '20 分钟',
-                level: '初级',
-                icon: '🔗'
             }
         ]
     },
