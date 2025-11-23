@@ -94,6 +94,19 @@ export const tutorialSections: TutorialSection[] = [
         ]
     },
     {
+        title: 'Proxy',
+        icon: '🌐',
+        items: [
+            {
+                title: 'Proxy代理',
+                path: '/tutorials/proxy',
+                duration: '25 分钟',
+                level: '中级',
+                icon: '🌐'
+            }
+        ]
+    },
+    {
         title: '样式',
         icon: '🎨',
         items: [
@@ -130,6 +143,13 @@ export const tutorialSections: TutorialSection[] = [
                 duration: '25 分钟',
                 level: '中级',
                 icon: '💻'
+            },
+            {
+                title: 'Cache Components',
+                path: '/tutorials/cache-components',
+                duration: '25 分钟',
+                level: '中级',
+                icon: '💾'
             }
         ]
     },
@@ -209,19 +229,6 @@ export const tutorialSections: TutorialSection[] = [
                 duration: '40 分钟',
                 level: '高级',
                 icon: '🔑'
-            }
-        ]
-    },
-    {
-        title: 'Middleware',
-        icon: '🛡️',
-        items: [
-            {
-                title: '中间件',
-                path: '/tutorials/middleware',
-                duration: '25 分钟',
-                level: '中级',
-                icon: '🛡️'
             }
         ]
     },
