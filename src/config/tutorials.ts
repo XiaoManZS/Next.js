@@ -131,6 +131,13 @@ export const tutorialSections: TutorialSection[] = [
                 icon: '🖥️'
             },
             {
+                title: 'RSC',
+                path: '/tutorials/rsc',
+                duration: '15 分钟',
+                level: '初级',
+                icon: '🖥️'
+            },
+            {
                 title: 'Server Components',
                 path: '/tutorials/server-components',
                 duration: '30 分钟',
