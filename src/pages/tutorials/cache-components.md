@@ -121,6 +121,7 @@ Next.js 会通过`(Partial Prerendering/PPR)`技术,实现静态外壳(Static Sh
 - `<h1>Home</h1>`： 纯静态内容，属于静态外壳的一部分，构建 / 请求时直接渲染，浏览器能立即显示。
 - `<template id="B:0"></template>` 动态内容的容器模板，后续用来挂载异步加载的动态内容
 - `<div>动态内容Loading...</div>`：占位符（fallback），属于静态外壳的一部分，在动态内容加载完成前显示。
+
 ![实现原理](../../assets/images/cache-components/2.png)
 
 - 这个 `<div>` 初始为 hidden，是服务器异步渲染完成的动态内容，等待客户端脚本触发后替换到占位符位置。
