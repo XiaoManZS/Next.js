@@ -72,6 +72,8 @@ export default async function Home() {
 
 适用场景：fetch请求、cookies、headers等动态数据
 
+>动态内容必须配合Suspense使用。
+
 ```tsx
 import { Suspense } from "react"
 import { cookies } from "next/headers"
@@ -107,9 +109,33 @@ export default async function Home() {
 }
 ```
 
-![静态内容](../../assets/images/cache-components/server.png)
+![动态内容](../../assets/images/cache-components/server.png)
 
-#### 2.2 非确定操作
+#### 2.2 实现原理
+
+Next.js 会通过`(Partial Prerendering/PPR)`技术,实现静态外壳(Static Shell)渲染，提供占位符，当用户请求时，再通过流式传输(Streaming)填充里面的动态内容，以此提升首屏加载速度和用户体验。
+
+![实现原理](../../assets/images/cache-components/1.png)
+我们观察上图
+
+- `<h1>Home</h1>`： 纯静态内容，属于静态外壳的一部分，构建 / 请求时直接渲染，浏览器能立即显示。
+- `<template id="B:0"></template>` 动态内容的容器模板，后续用来挂载异步加载的动态内容
+- `<div>动态内容Loading...</div>`：占位符（fallback），属于静态外壳的一部分，在动态内容加载完成前显示。
+![实现原理](../../assets/images/cache-components/2.png)
+
+- 这个 `<div>` 初始为 hidden，是服务器异步渲染完成的动态内容，等待客户端脚本触发后替换到占位符位置。
+- id="S:0" 与前面的 `<template id="B:0">` 一一对应，是 “动态内容 - 占位符” 的关联标识。
+
+![实现原理](../../assets/images/cache-components/3.png)
+
+```ts
+$RC("B:0", "S:0") // 关键调用：关联 B:0 占位符和 S:0 动态内容
+```
+
+- $RC（React Content Replace）：找到 id="B:0" 的占位符和 id="S:0" 的动态内容，将其加入替换队列 $RB。
+- $RV（React Content Render）：在动画帧 / 超时后执行替换，移除加载占位符，将动态内容插入到页面中，完成最终渲染。
+
+#### 2.3 非确定操作
 
 例如: `随机数`、`时间戳`等非确定操作，每次请求都可能生成不同结果。
 
