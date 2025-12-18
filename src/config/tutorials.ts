@@ -161,6 +161,19 @@ export const tutorialSections: TutorialSection[] = [
         ]
     },
     {
+        title: '缓存',
+        icon: '💾',
+        items: [
+            {
+                title: '缓存策略',
+                path: '/tutorials/cache',
+                duration: '35 分钟',
+                level: '中级',
+                icon: '💾'
+            }
+        ]
+    },
+    {
         title: '数据获取',
         icon: '📊',
         items: [
@@ -170,13 +183,6 @@ export const tutorialSections: TutorialSection[] = [
                 duration: '35 分钟',
                 level: '中级',
                 icon: '📊'
-            },
-            {
-                title: '缓存',
-                path: '/tutorials/cache',
-                duration: '35 分钟',
-                level: '中级',
-                icon: '🔄'
             }
         ]
     },

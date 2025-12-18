@@ -33,6 +33,17 @@ const { title, description } = Astro.props;
                 ))}
             </nav>
         </aside>
+        
+        <!-- 立即恢复侧边栏滚动位置，避免闪烁 -->
+        <script is:inline>
+            (function() {
+                const sidebar = document.querySelector('.sidebar');
+                const savedScroll = sessionStorage.getItem('tutorial-sidebar-scroll');
+                if (sidebar && savedScroll) {
+                    sidebar.scrollTop = parseInt(savedScroll, 10);
+                }
+            })();
+        </script>
 
         <!-- 中间内容 -->
         <main class="tutorial-content">
@@ -781,6 +792,22 @@ const { title, description } = Astro.props;
 
 <script>
   // @ts-nocheck
+  // 保存侧边栏滚动位置
+  function saveSidebarScroll() {
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar) {
+      sessionStorage.setItem('tutorial-sidebar-scroll', sidebar.scrollTop.toString());
+    }
+  }
+  
+  // 在点击导航链接时保存滚动位置
+  function attachScrollSaveHandlers() {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', saveSidebarScroll);
+    });
+  }
+  
   // 高亮当前页面对应的菜单项
   function highlightCurrentPage() {
     const currentPath = window.location.pathname;
@@ -798,9 +825,13 @@ const { title, description } = Astro.props;
 
   // 页面加载时执行
   highlightCurrentPage();
+  attachScrollSaveHandlers();
 
   // 监听导航事件（如果使用了客户端路由）
-  document.addEventListener('astro:page-load', highlightCurrentPage);
+  document.addEventListener('astro:page-load', () => {
+    highlightCurrentPage();
+    attachScrollSaveHandlers();
+  });
 
   // 为代码块添加复制按钮
   function addCopyButtons() {
