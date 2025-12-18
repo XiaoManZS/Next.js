@@ -27,13 +27,13 @@ src/app/home/page.tsx(新建一个页面)
 
 ```tsx
 export default async  function Home() {
-    const randomImage = await fetch('https://www.dmoe.cc/random.php?return=json') //这个接口随机返回一个二刺猿图片
+    const randomImage = await fetch('https://www.loliapi.com/acg/pc?type=json') //这个接口随机返回一个二刺猿图片
     const data = await randomImage.json()
     console.log(data)
     return (
         <div>
             <h1>Home</h1>
-            <img width={500} height={500} src={data.imgurl} alt="random image" />
+            <img width={500} height={500} src={data.url} alt="random image" />
         </div>
     )
 }
@@ -64,12 +64,12 @@ export default async  function Home() {
 export const revalidate = 5 // 5秒后重新更新
 //export const revalidate = 0 // 设置为0表示不缓存
 export default async  function Home() {
-    const randomImage = await fetch('https://www.dmoe.cc/random.php?return=json')
+    const randomImage = await fetch('https://www.loliapi.com/acg/pc?type=json')
     const data = await randomImage.json()
     return (
         <div>
             <h1>Home</h1>
-            <img width={500} height={500} src={data.imgurl} alt="random image" />
+            <img width={500} height={500} src={data.url} alt="random image" />
         </div>
     )
 }
@@ -87,12 +87,12 @@ export default async  function Home() {
 ```tsx
 export const dynamic = 'force-dynamic' // 动态更新 缓存组件不需要使用这个 默认都是动态内容
 export default async  function Home() {
-    const randomImage = await fetch('https://www.dmoe.cc/random.php?return=json')
+    const randomImage = await fetch('https://www.loliapi.com/acg/pc?type=json')
     const data = await randomImage.json()
     return (
         <div>
             <h1>Home</h1>
-            <img width={500} height={500} src={data.imgurl} alt="random image" />
+            <img width={500} height={500} src={data.url} alt="random image" />
         </div>
     )
 }
@@ -105,12 +105,12 @@ export default async  function Home() {
 
 ```tsx
 export default async  function Home() {
-    const randomImage = await fetch('https://www.dmoe.cc/random.php?return=json',{cache:'no-store'})
+    const randomImage = await fetch('https://www.loliapi.com/acg/pc?type=json',{cache:'no-store'})
     const data = await randomImage.json()
     return (
         <div>
             <h1>Home</h1>
-            <img width={500} height={500} src={data.imgurl} alt="random image" />
+            <img width={500} height={500} src={data.url} alt="random image" />
         </div>
     )
 }
@@ -131,12 +131,12 @@ import { connection } from "next/server"
 
 export default async  function Home() {
     await connection()
-    const randomImage = await fetch('https://www.dmoe.cc/random.php?return=json')
+    const randomImage = await fetch('https://www.loliapi.com/acg/pc?type=json')
     const data = await randomImage.json()
     return (
         <div>
             <h1>Home</h1>
-            <img width={500} height={500} src={data.imgurl} alt="random image" />
+            <img width={500} height={500} src={data.url} alt="random image" />
         </div>
     )
 }
@@ -161,10 +161,10 @@ export default nextConfig;
 ```tsx
 import { Suspense } from "react"
 const DynamicImage = async () => {
-  const randomImage = await fetch('https://www.dmoe.cc/random.php?return=json')
+  const randomImage = await fetch('https://www.loliapi.com/acg/pc?type=json')
   const data = await randomImage.json()
   return (
-    <img width={500} height={500} src={data.imgurl} alt="random image" />
+    <img width={500} height={500} src={data.url} alt="random image" />
   )
 }
 
