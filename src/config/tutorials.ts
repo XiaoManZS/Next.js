@@ -174,15 +174,15 @@ export const tutorialSections: TutorialSection[] = [
         ]
     },
     {
-        title: '数据获取',
-        icon: '📊',
+        title: '内置组件',
+        icon: '🖼️',
         items: [
             {
-                title: '数据获取',
-                path: '/tutorials/data-fetching',
+                title: 'Image组件',
+                path: '/tutorials/image',
                 duration: '35 分钟',
                 level: '中级',
-                icon: '📊'
+                icon: '🖼️'
             }
         ]
     },
