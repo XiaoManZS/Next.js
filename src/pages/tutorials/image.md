@@ -184,14 +184,6 @@ const nextConfig: NextConfig = {
   /* config options here */
   images: {
     formats: ['image/avif', 'image/webp'], //默认是 ['image/webp']
-    remotePatterns: [
-      {
-        protocol: 'https', // 协议
-        hostname: 'eo-img.521799.xyz', // 主机名
-        pathname: '/i/pc/**', // 路径
-        port: '', // 端口
-      },
-    ],
   },
 };
 ```
