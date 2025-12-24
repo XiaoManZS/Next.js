@@ -56,7 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 Next.js允许我们通过`strategy`属性来控制`Script`组件的加载策略。
 
-- `beforeInteractive`: 在代码也页面之前加载`会阻塞页面渲染`。
+- `beforeInteractive`: 在代码和页面之前加载`会阻塞页面渲染`。
 - `afterInteractive`(默认值): 在页面渲染到客户端之后加载。
 - `lazyOnload`: 在浏览器空闲时稍后加载脚本。
 - `worker`(实验性特性): 暂时不建议使用。
