@@ -183,6 +183,20 @@ export const tutorialSections: TutorialSection[] = [
                 duration: '35 分钟',
                 level: '中级',
                 icon: '🖼️'
+            },
+            {
+                title: 'font字体',
+                path: '/tutorials/  ',
+                duration: '20 分钟',
+                level: '中级',
+                icon: '🔤'
+            },
+            {
+                title: 'Script脚本  ',
+                path: '/tutorials/script',
+                duration: '10 分钟',
+                level: '中级',
+                icon: '📄'
             }
         ]
     },
