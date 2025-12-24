@@ -1,12 +1,12 @@
 ---
 layout: ../../layouts/TutorialLayout.astro
-title: Script脚本
-description: Script脚本
+title: Script组件
+description: Script组件
 ---
 
-# Script脚本
+# Script组件
 
-Next.js允许我们内置脚本`Script`组件，并且他还对`Script`组件进行优化。
+Next.js允许我们使用Script组件去加载js脚本(外部/本地脚本)，并且他还对Script组件进行优化。
 
 
 ### 基本使用
