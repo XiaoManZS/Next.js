@@ -99,6 +99,8 @@ import { Inter,BBH_Sans_Bartle,Roboto_Slab,Rubik,Montserrat } from 'next/font/go
 
 #### 本地字体
 
+字体下载地址：[免费可商用字体](https://nextjs-docs-henna-six.vercel.app/ZhiyongDatongFont.ttf)
+
 本地字体需要通过`src`属性指定字体文件路径，字体文件路径可以是单个文件，也可以是多个文件。
 
 ```tsx
