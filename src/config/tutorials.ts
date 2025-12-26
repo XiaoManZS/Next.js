@@ -186,7 +186,7 @@ export const tutorialSections: TutorialSection[] = [
             },
             {
                 title: 'font字体',
-                path: '/tutorials/  ',
+                path: '/tutorials/font',
                 duration: '20 分钟',
                 level: '中级',
                 icon: '🔤'
