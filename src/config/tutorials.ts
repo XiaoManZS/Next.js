@@ -201,6 +201,19 @@ export const tutorialSections: TutorialSection[] = [
         ]
     },
     {
+        title:"静态导出SSG",
+        icon: '🔄',
+        items: [
+            {
+                title: '静态导出SSG',
+                path: '/tutorials/ssg',
+                duration: '20 分钟',
+                level: '中级',
+                icon: '🔄'
+            }
+        ]
+    },
+    {
         title: 'Server Action',
         icon: '⚡',
         items: [

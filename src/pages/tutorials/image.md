@@ -93,7 +93,7 @@ export default async function Home() {
 ```
 当我们直接使用远程图片引入的时候Next.js会报错，因为Next.js默认只允许加载本地图片，如果需要加载远程图片，需要配置`next.config.js`文件。
 
-image-loader.ts:86 Uncaught Error: Invalid src prop (https://eo-img.521799.xyz/i/pc/img1.webp) on `next/image`, hostname "eo-img.521799.xyz" is not configured under images in your `next.config.js`
+image-loader.ts  Uncaught Error: Invalid src prop (https://eo-img.521799.xyz/i/pc/img1.webp) on `next/image`, hostname "eo-img.521799.xyz" is not configured under images in your `next.config.js`
 
 ```ts
 import type { NextConfig } from "next";
@@ -120,8 +120,10 @@ const nextConfig: NextConfig = {
 - lazy: 懒加载，默认值，在图片进入视口才会加载。
 - eager: 立即加载，在图片进入视口就会加载。
 
+
 Image with src "https://eo-img.521799.xyz/i/pc/img1.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
 Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+
 
 ```tsx
 import Image from "next/image"
