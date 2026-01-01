@@ -218,7 +218,7 @@ export const tutorialSections: TutorialSection[] = [
         icon: '⚡',
         items: [
             {
-                title: '服务端行为',
+                title: '服务器函数',
                 path: '/tutorials/server-actions',
                 duration: '30 分钟',
                 level: '中级',

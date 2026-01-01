@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/TutorialLayout.astro
-title: 路由导航 - Next.js 路由系统
-description: 了解 Next.js 的路由导航基础和工作原理
+title: 客户端组件
+description: 客户端组件
 ---
 
 # 客户端组件(Client Components)

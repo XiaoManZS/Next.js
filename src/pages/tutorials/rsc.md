@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/TutorialLayout.astro
-title: AI集成
-description: AI集成
+title: 服务器组件
+description: 服务器组件
 ---
 
 # RSC(React Server Components)

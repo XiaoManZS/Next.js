@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/TutorialLayout.astro
-title: Next.js 项目结构
-description: 深入了解 Next.js 项目的文件和目录结构
+title: 项目搭建
+description: 项目搭建
 ---
 
 # Next.js 项目搭建
