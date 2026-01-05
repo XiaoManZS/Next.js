@@ -210,6 +210,13 @@ export const tutorialSections: TutorialSection[] = [
                 duration: '20 分钟',
                 level: '中级',
                 icon: '🔄'
+            },
+            {
+                title: 'MDX',
+                path: '/tutorials/mdx',
+                duration: '20 分钟',
+                level: '中级',
+                icon: '📝'
             }
         ]
     },
