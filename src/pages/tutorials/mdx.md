@@ -116,3 +116,42 @@ export default function MyComponent() {
   );
 }
 ```
+
+### 全局样式
+
+如果你希望在这个项目中修改所有的MDX文件的样式，你可以使用`mdx-components.tsx`文件来修改。
+
+```tsx
+//mdx-components.tsx
+import type { MDXComponents } from 'mdx/types'
+ 
+const components: MDXComponents = {
+    h1: ({ children }) => <h1 className='text-2xl text-red-400 font-bold'>{children}</h1>, //# 代表h1 你可以自定义修改样式
+    li: ({ children }) => <li className='list-disc text-blue-500 list-inside'>{children}</li>, //- 代表li 你可以自定义修改样式
+    //...你可以自定义修改更多的样式
+}
+ 
+export function useMDXComponents(): MDXComponents {
+  return components
+}
+```
+
+### 远程加载mdx/md文件
+
+如果你的MDX文件存储在远程服务器上，你可以使用`远程mdx`来加载文件。
+
+```bash
+npm install next-mdx-remote-client
+```
+
+```tsx
+//src/app/home/page.tsx
+import { MDXRemote } from 'next-mdx-remote-client/rsc'
+export default async function Home() {
+  const res = await fetch('https://nextjs-docs-henna-six.vercel.app/xm.mdx') //链接是彩蛋
+  const source = await res.text()
+  return (
+      <MDXRemote source={source} />
+  );
+}
+```
