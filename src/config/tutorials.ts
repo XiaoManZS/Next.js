@@ -234,23 +234,66 @@ export const tutorialSections: TutorialSection[] = [
         ]
     },
     {
-        title: '设置元数据',
+        title: 'SEO优化',
         icon: '🏷️',
         items: [
             {
-                title: '静态元数据对象',
-                path: '/tutorials/static-metadata',
+                title: 'SEO介绍',
+                path: '/seo/introduce',
                 duration: '15 分钟',
                 level: '初级',
                 icon: '📝'
             },
             {
-                title: '动态 generateMetadata',
-                path: '/tutorials/dynamic-metadata',
-                duration: '20 分钟',
-                level: '中级',
-                icon: '🔄'
-            }
+                title: 'Google爬虫',
+                path: '/seo/google-reptile',
+                duration: '15 分钟',
+                level: '初级',
+                icon: '📝'
+            },
+            {
+                title: 'robots.txt',
+                path: '/seo/robots',
+                duration: '15 分钟',
+                level: '初级',
+                icon: '📝'
+            },
+            {
+                title: 'sitemap.xml',
+                path: '/seo/sitemap',
+                duration: '15 分钟',
+                level: '初级',
+                icon: '📝'
+            },
+            {
+                title: 'TDK',
+                path: '/seo/TDK',
+                duration: '15 分钟',
+                level: '初级',
+                icon: '📝'
+            },
+            {
+                title: 'JSON-LD',
+                path: '/seo/JSON-LD',
+                duration: '15 分钟',
+                level: '初级',
+                icon: '📝'
+            },
+            {
+                title: 'Open Graph',
+                path: '/seo/openGraph',
+                duration: '15 分钟',
+                level: '初级',
+                icon: '📝'
+            },
+            {
+                title: 'Web Vitals',
+                path: '/seo/web-vitals',
+                duration: '15 分钟',
+                level: '初级',
+                icon: '📝'
+            },
+            
         ]
     },
     {
