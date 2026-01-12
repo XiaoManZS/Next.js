@@ -301,6 +301,13 @@ export const tutorialSections: TutorialSection[] = [
         icon: '🔧',
         items: [
             {
+                title: '环境变量',
+                path: '/env/environment',
+                duration: '30 分钟',
+                level: '中级',
+                icon: '🔑'
+            },
+            {
                 title: 'next.config',
                 path: '/tutorials/next.config',
                 duration: '30 分钟',
@@ -327,7 +334,7 @@ export const tutorialSections: TutorialSection[] = [
         icon: '🔌',
         items: [
             {
-                title: '服务端 API',
+                title: 'Hono.js + Next.js',
                 path: '/tutorials/api-routes',
                 duration: '30 分钟',
                 level: '中级',
@@ -341,7 +348,7 @@ export const tutorialSections: TutorialSection[] = [
                 icon: '🔌'
             },
             {
-                title:'AI集成',
+                title:'其他',
                 path: '/tutorials/ai',
                 duration: '30 分钟',
                 level: '中级',
