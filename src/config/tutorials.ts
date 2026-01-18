@@ -308,8 +308,15 @@ export const tutorialSections: TutorialSection[] = [
                 icon: '🔑'
             },
             {
+                title: '国际化',
+                path: '/tutorials/internationalization',
+                duration: '30 分钟',
+                level: '中级',
+                icon: '🌐'
+            },
+            {
                 title: 'next.config',
-                path: '/tutorials/next.config',
+                path: '/tutorials/config',
                 duration: '30 分钟',
                 level: '中级',
                 icon: '🔧'
