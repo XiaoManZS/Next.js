@@ -245,7 +245,7 @@ export const tutorialSections: TutorialSection[] = [
                 icon: '📝'
             },
             {
-                title: 'Google爬虫',
+                title: 'Google搜索原理',
                 path: '/seo/google-reptile',
                 duration: '15 分钟',
                 level: '初级',

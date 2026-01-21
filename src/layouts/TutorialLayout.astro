@@ -60,6 +60,19 @@ const { title, description } = Astro.props;
                 <!-- 目录将通过 JavaScript 动态生成 -->
             </nav>
         </aside>
+
+    <!-- 图片预览模态框 -->
+    <div id="image-modal" class="image-modal">
+        <div class="image-modal-backdrop"></div>
+        <div class="image-modal-content">
+            <button class="image-modal-close" aria-label="关闭">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <img id="modal-image" src="" alt="" />
+        </div>
+    </div>
 </Layout>
 
 <style>
@@ -580,6 +593,141 @@ const { title, description } = Astro.props;
         border-radius: 8px;
         margin: 2rem 0;
         border: 1px solid var(--border-color);
+        cursor: zoom-in;
+        transition: all 0.3s ease;
+    }
+
+    .tutorial-content img:hover {
+        opacity: 0.9;
+        transform: scale(1.02);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    /* 图片预览模态框样式 */
+    .image-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .image-modal.active {
+        display: flex;
+        opacity: 1;
+    }
+
+    .image-modal-backdrop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.92);
+        backdrop-filter: blur(8px);
+    }
+
+    .image-modal-content {
+        position: relative;
+        max-width: 95vw;
+        max-height: 95vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 10000;
+        animation: modalZoomIn 0.3s ease;
+    }
+
+    @keyframes modalZoomIn {
+        from {
+            transform: scale(0.8);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    .image-modal-close {
+        position: absolute;
+        top: -50px;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        padding: 0;
+    }
+
+    .image-modal-close:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: rotate(90deg);
+    }
+
+    .image-modal-close svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    #modal-image {
+        max-width: 90vw;
+        max-height: 85vh;
+        object-fit: contain;
+        border-radius: 8px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+        cursor: zoom-out;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .image-modal-caption {
+        margin-top: 1.5rem;
+        padding: 0.75rem 1.5rem;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(10px);
+        border-radius: 8px;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 0.95rem;
+        text-align: center;
+        max-width: 80vw;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 768px) {
+        .image-modal-close {
+            top: -45px;
+            width: 36px;
+            height: 36px;
+        }
+
+        .image-modal-close svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        #modal-image {
+            max-width: 95vw;
+            max-height: 80vh;
+        }
+
+        .image-modal-caption {
+            font-size: 0.85rem;
+            padding: 0.6rem 1rem;
+            max-width: 90vw;
+        }
     }
 
     /* 自定义容器样式 - warning, note, tip, danger 等 */
@@ -1305,5 +1453,79 @@ const { title, description } = Astro.props;
   // 监听页面导航
   document.addEventListener('astro:page-load', () => {
     setTimeout(generateTOC, 150);
+  });
+
+  // 图片预览功能
+  function initImagePreview() {
+    const modal = document.getElementById('image-modal');
+    const modalImage = document.getElementById('modal-image');
+    const closeBtn = document.querySelector('.image-modal-close');
+    const backdrop = document.querySelector('.image-modal-backdrop');
+    
+
+
+    // 获取所有文章中的图片
+    const contentImages = document.querySelectorAll('.tutorial-content img');
+    
+    // 为每张图片添加点击事件
+    contentImages.forEach((img: HTMLImageElement) => {
+      // 跳过已经处理过的图片
+      if (img.hasAttribute('data-preview-enabled')) return;
+      
+      img.setAttribute('data-preview-enabled', 'true');
+      
+      img.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // 设置模态框内容
+        modalImage.src = img.src;
+        modalImage.alt = img.alt || '';
+        
+        // 显示模态框
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // 阻止背景滚动
+      });
+    });
+    
+    // 关闭模态框的函数
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = ''; // 恢复滚动
+      
+      // 延迟清空内容，等待动画完成
+      setTimeout(() => {
+        modalImage.src = '';
+        modalImage.alt = '';
+      }, 300);
+    }
+    
+    // 点击关闭按钮
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeModal);
+    }
+    
+    // 点击背景关闭
+    if (backdrop) {
+      backdrop.addEventListener('click', closeModal);
+    }
+    
+    // 点击图片本身关闭
+    modalImage.addEventListener('click', closeModal);
+    
+    // 按 ESC 键关闭
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+  }
+
+  // 页面加载时初始化图片预览
+  initImagePreview();
+
+  // 监听页面导航
+  document.addEventListener('astro:page-load', () => {
+    initImagePreview();
   });
 </script>
