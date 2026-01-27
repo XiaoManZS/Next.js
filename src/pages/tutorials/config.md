@@ -144,26 +144,26 @@ HTTP响应头参考: [HTTP响应头](https://developer.mozilla.org/zh-CN/docs/We
   }
 ```
 
-### assetsPrefix配置
+### assetPrefix配置
 
-assetsPrefix配置用于配置静态资源前缀，例如：部署到CDN后，静态资源路径会发生变化，需要配置这个配置项。
+assetPrefix配置用于配置静态资源前缀，例如：部署到CDN后，静态资源路径会发生变化，需要配置这个配置项。
 
 ```ts
 import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
-  assetsPrefix: 'https://cdn.example.com', // 静态资源前缀
+  assetPrefix: 'https://cdn.example.com', // 静态资源前缀
 };
 
 export default nextConfig;
 ```
 
-未配置assetsPrefix时：
+未配置assetPrefix时：
 ```txt
 /_next/static/chunks/4b9b41aaa062cbbfeff4add70f256968c51ece5d.4d708494b3aed70c04f0.js
 ```
 
-配置assetsPrefix后：
+配置assetPrefix后：
 ```txt
 https://cdn.example.com/_next/static/chunks/4b9b41aaa062cbbfeff4add70f256968c51ece5d.4d708494b3aed70c04f0.js
 ```
