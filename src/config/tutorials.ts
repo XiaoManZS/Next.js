@@ -342,21 +342,21 @@ export const tutorialSections: TutorialSection[] = [
         items: [
             {
                 title: 'Hono.js + Next.js',
-                path: '/tutorials/api-routes',
+                path: '/server/hono',
                 duration: '30 分钟',
                 level: '中级',
                 icon: '🔌'
             },
             {
                 title: 'ORM',
-                path: '/tutorials/orm',
+                path: '/server/orm',
                 duration: '30 分钟',
                 level: '中级',
                 icon: '🔌'
             },
             {
                 title:'其他',
-                path: '/tutorials/ai',
+                path: '/server/others',
                 duration: '30 分钟',
                 level: '中级',
                 icon: '🔌'
