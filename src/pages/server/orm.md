@@ -34,7 +34,7 @@ SELECT id, name, email FROM users WHERE id = 1
 
 ### Prisma
 
-<img src="/src/assets/images/orm/prisma.svg" width="80" height="80" alt="PostgreSQL" />
+<img src="../../assets/images/orm/prisma.svg" width="80" height="80" alt="PostgreSQL" />
 
 ORM框架比较多，这里我选择使用`Prisma`，因为`Prisma`是`TypeScript`优先的ORM框架，并且支持多种数据库，包括`MySQL` `PostgreSQL` `SQLite` `MongoDB`等。它以其出色的性能、类型安全性以及与 GraphQL 和 REST API 的集成而闻名
 
@@ -43,7 +43,7 @@ ORM框架比较多，这里我选择使用`Prisma`，因为`Prisma`是`TypeScrip
 
 ### Postgresql
 
-<img src="/src/assets/images/orm/pg.png" width="50" height="50" alt="PostgreSQL" />
+<img src="../../assets/images/orm/pg.png" width="50" height="50" alt="PostgreSQL" />
 
 数据库的种类也是非常多的，这里我选择使用`PostgreSQL`，完全开源免费，我称为世界第一数据库(个人言论)，因为他有非常强大的功能，例如支持高级数据类型，`JSON` `数组` `枚举` `布尔值` `地理空间GIS`,事务与并发能力更强，并且还支持自定义扩展其功能。 
 
