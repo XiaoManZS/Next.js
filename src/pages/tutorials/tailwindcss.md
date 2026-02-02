@@ -17,7 +17,7 @@ description: Next.js CSS方案
 
 ### Tailwind CSS
 
-Tailwind CSS(css原子化)，他是一个css框架，可以让你快速构建网页，他提供了大量的css类，你只需要使用这些类，就可以快速构建网页。
+Tailwind CSS(原子化CSS)，他是一个css框架，可以让你快速构建网页，他提供了大量的css类，你只需要使用这些类，就可以快速构建网页。
 
 [Tailwind CSS](https://tailwindcss.com/)
 
