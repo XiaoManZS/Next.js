@@ -123,7 +123,7 @@ export async function generateMetadata(
 
   return {
     title: `${data.title} | ${resolvedParent.title?.absolute ?? '文章'}`,
-    description: data.body.slice(0, 160),
+    description: data.body.slice(0, 150),
     keywords: [data.title],
   };
 }
