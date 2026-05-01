@@ -61,6 +61,7 @@ ORM框架比较多，这里我选择使用`Prisma`，因为`Prisma`是`TypeScrip
 docker pull postgres:18
 docker run -d --name postgresServer -p 6666:5432 -e POSTGRES_PASSWORD=123456 postgres:18
 ```
+>如果下载不下来可以用镜像，打开docker设置，然后选择docker Engine，镜像站https://github.com/dongyubin/DockerHub，根据指引贴进去即可，然后点击`Apply`即可。
 
 账号默认为`postgres`，密码为`123456`，端口号为`6666`。
 
