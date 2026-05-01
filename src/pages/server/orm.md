@@ -38,7 +38,7 @@ SELECT id, name, email FROM users WHERE id = 1
 
 ORM框架比较多，这里我选择使用`Prisma`，因为`Prisma`是`TypeScript`优先的ORM框架，并且支持多种数据库，包括`MySQL` `PostgreSQL` `SQLite` `MongoDB`等。它以其出色的性能、类型安全性以及与 GraphQL 和 REST API 的集成而闻名
 
->注：我们当前使用的prisma版本是`7.3.0`为目前最新版(2026-01-29)，他每个大版本是有很大差异的，所以建议大家跟我安装一样的版本。
+>注：我们当前使用的prisma版本是`7.8.0`为目前最新版(2026-05-1)，他每个大版本是有很大差异的，所以建议大家跟我安装一样的版本。
 
 
 ### Postgresql
