@@ -329,7 +329,7 @@ export const tutorialSections: TutorialSection[] = [
         items: [
             {
                 title: '身份验证',
-                path: '/tutorials/authentication',
+                path: '/auth/better',
                 duration: '40 分钟',
                 level: '高级',
                 icon: '🔑'
