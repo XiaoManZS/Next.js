@@ -9,8 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/markdown-remark": "^7.1.0",
+    "@astrojs/markdown-remark": "^7.1.1",
     "@astrojs/sitemap": "^3.7.2",
-    "astro": "^6.1.6"
+    "astro": "^6.3.1"
   }
 }

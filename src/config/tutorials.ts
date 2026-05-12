@@ -369,8 +369,8 @@ export const tutorialSections: TutorialSection[] = [
         items: [
             {
                 title: '项目部署',
-                path: '/tutorials/deployment',
-                duration: '35 分钟',
+                path: '/deploy/vercel',
+                duration: '20 分钟',
                 level: '中级',
                 icon: '📦'
             }
