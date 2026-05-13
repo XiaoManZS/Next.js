@@ -115,4 +115,4 @@ PS D:\project\next-auth-1> vercel deploy
 PS D:\project\next-auth-1> 
 ```
 
-测试网址：<https://next-auth-1-eta.vercel.app/home>大家可以访问测试一下。
+测试网址：<https://next-auth-1-psi.vercel.app/home>大家可以访问测试一下。
